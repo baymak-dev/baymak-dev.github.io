@@ -36,9 +36,7 @@ export function initFormHandler() {
       showMessage('Please enter a valid email address.', 'error')
       return
     }
-
-    document.getElementById('reply-to').value = email
-
+    
     try {
 
       const response = await fetch(contactForm.action, {
@@ -81,3 +79,4 @@ export function initFormHandler() {
     })
   })
 }
+
