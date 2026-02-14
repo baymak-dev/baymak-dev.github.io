@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="uk" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+
+    <title data-i18n="head_title">Baymak Taras | Web Developer Portfolio</title>
+
+    <link rel="canonical" href="https://baymak.dev" />
+    <meta
+      name="description"
+      data-i18n="meta_desc"
+      content="Портфоліо Тараса Баймака — веб-розробника, що спеціалізується на створенні сучасних, чистих та швидких веб-рішень."
+    />
+    <meta
+      name="keywords"
+      content="Baymak Taras, Тарас Баймак, веб-розробник, JS розробник, frontend developer, розробка сайтів, PWA, веб-дизайн"
+    />
+    <meta name="author" content="Baymak Taras" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Baymak Taras Portfolio" />
+    <meta
+      property="og:title"
+      data-i18n="og_title"
+      content="Baymak Taras | Web Developer"
+    />
+    <meta
+      property="og:description"
+      data-i18n="og_desc"
+      content="Перетворюю ідеї в реальність за допомогою чистого коду."
+    />
+    <meta property="og:url" content="https://baymak.dev" />
+    <meta
+      property="og:image"
+      content="https://baymak.dev/assets/images/og-preview.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Baymak Taras | Web Developer" />
+    <meta
+      name="twitter:description"
+      content="Портфоліо веб-розробника Тараса Баймака."
+    />
+    <meta
+      name="twitter:image"
+      content="https://baymak.dev/assets/images/og-preview.png"
+    />
+
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#030712"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/icons/site.webmanifest" />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      document.documentElement.classList.add('js-enabled')
+      ;(function () {
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.classList.add(
+          theme === 'dark' ? 'dark-theme' : 'light-theme',
+        )
+      })()
+    </script>
+
+    <style>
+      :root {
+        --color-bg: #030712;
+      }
+      body {
+        background-color: var(--color-bg);
+        margin: 0;
+        min-width: 320px;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        height: 60px;
+      }
+      .clouds-stage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .js-enabled .clouds-stage {
+        opacity: 0;
+        transition: opacity 0.8s ease-in;
+      }
+      .js-enabled .clouds-ready .clouds-stage {
+        opacity: 1;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <noscript>
+      <style>
+        .navbar__menu {
+          display: flex !important;
+          position: static !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        .mobile-menu-toggle {
+          display: none !important;
+        }
+        .clouds-stage {
+          display: none !important;
+        }
+        [class*='fade-'],
+        [class*='slide-'] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Тарас Баймак",
+        "alternateName": "Baymak Taras",
+        "url": "https://baymak.dev",
+        "image": "https://baymak.dev/assets/images/og-preview.png",
+        "jobTitle": "Web Developer",
+        "description": "Портфоліо веб-розробника, що спеціалізується на створенні сучасних та швидких інтерфейсів.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UA"
+        },
+        "sameAs": [
+          "https://github.com/baymak-dev",
+          "https://www.linkedin.com/in/taras-baymak",
+          "https://t.me/Baymak_dev"
+        ],
+        "knowsAbout": [
+          "Frontend Development",
+          "JavaScript",
+          "PWA",
+          "Responsive Design"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="clouds-stage" class="clouds-stage"></div>
+
+    <div class="content-wrapper">
+      <header class="header">
+        <nav class="navbar container" aria-label="Main navigation">
+          <a
+            href="#hero"
+            class="navbar__logo"
+            aria-label="Baymak Taras - Portfolio Home"
+          >
+            <span class="logo-text">Baymak Taras</span>
+          </a>
+
+          <ul class="navbar__menu">
+            <li class="navbar__item">
+              <a href="#about" class="navbar__link" data-i18n="nav_about"
+                >About</a
+              >
+            </li>
+            <li class="navbar__item">
+              <a href="#skills" class="navbar__link" data-i18n="nav_skills"
+                >Skills</a
+              >
+            </li>
+            <li class="navbar__item">
+              <a href="#projects" class="navbar__link" data-i18n="nav_projects"
+                >Projects</a
+              >
+            </li>
+            <li class="navbar__item">
+              <a href="#contact" class="navbar__link" data-i18n="nav_contact"
+                >Contact</a
+              >
+            </li>
+
+            <li class="mobile-lang-item">
+              <div
+                class="mobile-lang-switcher"
+                role="group"
+                aria-label="Language selector"
+              >
+                <button
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="Switch to English"
+                >
+                  EN
+                </button>
+                <span class="lang-divider" aria-hidden="true">|</span>
+                <button
+                  class="lang-btn"
+                  data-lang="uk"
+                  aria-label="Змінити на українську"
+                >
+                  UA
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <div class="navbar__actions">
+            <div class="desktop-lang-switcher">
+              <div class="lang-switcher">
+                <button
+                  class="lang-main-btn"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-label="Change language"
+                >
+                  <span class="current-lang-text">UA</span>
+                  <i
+                    class="fas fa-chevron-down lang-arrow"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <div class="lang-dropdown" role="listbox">
+                  <button
+                    class="lang-btn"
+                    data-lang="en"
+                    role="option"
+                    aria-label="English"
+                  >
+                    EN
+                  </button>
+                  <button
+                    class="lang-btn"
+                    data-lang="uk"
+                    role="option"
+                    aria-label="Українська"
+                  >
+                    UA
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Switch between dark and light mode"
+            >
+              <span class="theme-toggle__icon" aria-hidden="true">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+              </span>
+            </button>
+
+            <button
+              class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              aria-label="Open main menu"
+              aria-expanded="false"
+            >
+              <span class="hamburger"></span>
+              <span class="hamburger"></span>
+              <span class="hamburger"></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="hero section" id="hero" aria-label="Introduction">
+          <div class="container">
+            <div class="hero__content">
+              <h1 class="hero__title">
+                <span class="hero__name" itemprop="name">Baymak Taras</span>
+                <span
+                  class="hero__profession"
+                  data-i18n="hero_profession"
+                  itemprop="jobTitle"
+                  >Web Developer</span
+                >
+              </h1>
+
+              <p class="hero__description" data-i18n="hero_description">
+                Transforming the experience of resilience and precision into
+                reliable code.
+              </p>
+
+              <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">
+                  <span data-i18n="btn_work">View My Work</span>
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+                <a
+                  href="./assets/docs/Taras_Baymak_CV.pdf"
+                  class="btn btn--secondary"
+                  download="Taras_Baymak_CV"
+                  target="_blank"
+                >
+                  <span data-i18n="btn_cv">Download CV</span>
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about section" id="about" aria-labelledby="about-title">
+          <div class="container">
+            <h2 class="section__title" id="about-title" data-i18n="about_title">
+              About Me
+            </h2>
+            <div class="about__content">
+              <div class="about__image">
+                <div class="image-wrapper">
+                  <img
+                    src="./assets/images/my-photo.webp"
+                    data-i18n-alt="img_alt"
+                    class="about__img"
+                    width="450"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div class="about__text">
+                <p data-i18n="about_p1">
+                  I'm a passionate web developer dedicated to creating
+                  innovative and efficient solutions. I love turning ideas into
+                  reality and always strive for clean and functional design.
+                </p>
+                <p data-i18n="about_p2">
+                  I value discipline and results. I thrive in environments where
+                  there is no room for error. My philosophy is simple: the best
+                  code is clean, fast, and efficient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="skills section" id="skills">
+          <div class="container">
+            <h2 class="section__title" data-i18n="skills_title">Skills</h2>
+            <div class="skills__grid"></div>
+          </div>
+        </section>
+
+        <section class="projects section" id="projects">
+          <div class="container">
+            <h2 class="section__title" data-i18n="projects_title">
+              My Projects
+            </h2>
+
+            <div
+              class="projects__filters"
+              role="tablist"
+              aria-label="Project categories"
+            >
+              <button
+                class="filter-btn active"
+                data-filter="all"
+                data-i18n="filter_all"
+                role="tab"
+                aria-selected="true"
+              >
+                All
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="web"
+                data-i18n="filter_web"
+                role="tab"
+                aria-selected="false"
+              >
+                Web Apps
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="landing"
+                data-i18n="filter_landing"
+                role="tab"
+                aria-selected="false"
+              >
+                Landing Pages
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="ui"
+                data-i18n="filter_ui"
+                role="tab"
+                aria-selected="false"
+              >
+                UI/UX
+              </button>
+            </div>
+
+            <div
+              class="projects__grid"
+              id="projectsGrid"
+              aria-live="polite"
+            ></div>
+          </div>
+        </section>
+
+        <section
+          class="contact section"
+          id="contact"
+          itemscope
+          itemtype="https://schema.org/Person"
+        >
+          <div class="container">
+            <h2 class="section__title" data-i18n="contact_title">Contact Me</h2>
+
+            <div class="contact__content">
+              <form
+                action="https://formspree.io/f/mwvnenbg"
+                method="POST"
+                class="contact-form"
+                id="contactForm"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder=" "
+                    required
+                    aria-required="true"
+                  />
+                  <label for="name" data-i18n="form_name">Name</label>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder=" "
+                    required
+                    aria-required="true"
+                  />
+                  <label for="email" data-i18n="form_email">Email</label>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder=" "
+                    required
+                    aria-required="true"
+                  ></textarea>
+                  <label for="message" data-i18n="form_message">Message</label>
+                </div>
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New message from portfolio"
+                />
+                <button type="submit" class="btn btn--primary btn--full">
+                  <span data-i18n="btn_send">Send Message</span>
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+                <div id="form-message" class="form-message"></div>
+              </form>
+
+              <div class="contact-info">
+                <h3 class="contact-info__title" data-i18n="touch_title">
+                  Get in Touch
+                </h3>
+                <p class="contact-info__text" data-i18n="touch_text">
+                  Feel free to reach out for collaborations!
+                </p>
+
+                <div class="contact-details">
+                  <div class="contact-item">
+                    <a
+                      href="mailto:baymak.dev@gmail.com"
+                      class="contact-link"
+                      itemprop="email"
+                    >
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                      <span>baymak.dev@gmail.com</span>
+                    </a>
+                  </div>
+                  <div
+                    class="contact-item"
+                    itemprop="address"
+                    itemscope
+                    itemtype="https://schema.org/PostalAddress"
+                  >
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Lviv,Ukraine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contact-link"
+                    >
+                      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                      <span data-i18n="location" itemprop="addressLocality"
+                        >Ukraine, Lviv</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div class="social-links">
+                  <a
+                    href="https://github.com/baymak-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="GitHub"
+                    itemprop="sameAs"
+                  >
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/taras-baymak"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="LinkedIn"
+                    itemprop="sameAs"
+                  >
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Baymak_dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Telegram"
+                    itemprop="sameAs"
+                  >
+                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="container">
+          <div class="footer__content">
+            <div
+              class="footer__logo"
+              itemscope
+              itemtype="https://schema.org/Organization"
+            >
+              <meta itemprop="name" content="Baymak Taras" />
+              <span class="logo-text">Baymak Taras</span>
+              <span class="footer__tagline" data-i18n="footer_tag"
+                >Web Developer</span
+              >
+            </div>
+
+            <nav class="footer__nav" aria-label="Footer Navigation">
+              <a href="#about" data-i18n="nav_about">About</a>
+              <a href="#skills" data-i18n="nav_skills">Skills</a>
+              <a href="#projects" data-i18n="nav_projects">Projects</a>
+              <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </nav>
+
+            <div class="footer__copyright">
+              <p>
+                © <span id="currentYear">2026</span>
+                <span
+                  itemprop="copyrightHolder"
+                  itemscope
+                  itemtype="https://schema.org/Person"
+                >
+                  <span itemprop="name">Baymak Taras</span> </span
+                >.
+                <span data-i18n="footer_rights">All rights reserved.</span>
+              </p>
+
+              <p class="footer__made">
+                <span data-i18n="footer_made">Made with</span>
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <span class="tech-stack">and Vanilla JS</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) translate3d(0, 0, 0);
+  }
+  10%, 90% {
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 20%)) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes driftVertical {
+  from {
+    transform: translate3d(0, -15px, 0);
+  }
+  to {
+    transform: translate3d(0, 15px, 0);
+  }
+}
+
+
+#clouds-stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  contain: layout paint size; 
+}
+
+.cloud-container {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.cloud-js {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: blur(1px); 
+  will-change: transform;
+}
+
+.project-card, .skill-item, .contact-form {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--color-card-shadow);
+  border-radius: 1rem;
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none;
+  transition: transform var(--transition-speed) var(--transition-timing), 
+              box-shadow var(--transition-speed) var(--transition-timing);
+  will-change: transform;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
