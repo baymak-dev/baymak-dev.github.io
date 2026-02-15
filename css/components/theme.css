@@ -1,15 +1,14 @@
 :root {
       --gradient-start: #448fd6;
-  --gradient-middle: #69aeee;
+  --gradient-middle: #448fd6;
   --gradient-end: #2f6688;
   --cloud-opacity: 0.5;
 }
 
 [data-theme="dark"] {
   --gradient-start: #3c506d;
-  --gradient-middle: #263d63;
+  --gradient-middle: #3c506d;
   --gradient-end: #05080d;
-  
   --cloud-opacity: 0.4;
 }
 
@@ -78,4 +77,5 @@ body {
 @keyframes themeSwitch {
   0% { opacity: 0.5; }
   100% { opacity: 1; }
+
 }
